@@ -18,7 +18,6 @@ import {
   Play,
   Check,
 } from "lucide-react"
-import { motion } from "framer-motion"
 
 export default function Component() {
   const [scrolled, setScrolled] = useState(false)
@@ -284,7 +283,7 @@ export default function Component() {
               What People Are Saying
             </h2>
             <p className="text-xl text-gray-400 text-center mb-12">
-              Don't just take our word for it. Here's what real people are saying about EventPro.
+              Don not just take our word for it. Here is what real people are saying about EventPro.
             </p>
             <div className="relative">
               <div 
