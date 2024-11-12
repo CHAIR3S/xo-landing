@@ -4,13 +4,10 @@ import { useState, useEffect, useRef } from 'react'
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/Button"
-import { Input } from "@/components/Input"
 import { Card, CardContent } from "@/components/Card"
 import {
   Calendar,
   Clock,
-  MapPin,
-  Users,
   Moon,
   Sun,
   Menu,
@@ -321,7 +318,6 @@ export default function Component() {
             </div>
           </div>
         </section>
-
         <section id="pricing" className="py-20 bg-gray-50 dark:bg-gray-900">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">
@@ -330,23 +326,36 @@ export default function Component() {
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               {[
                 {
-                  name: "Starter",
-                  price: "$29",
-                  description: "Perfect for small events",
-                  features: ["Up to 100 attendees", "Basic analytics", "Email support", "1 team member"],
+                  name: "Basic",
+                  price: "Free",
+                  description: "Ideal for small events",
+                  features: ["Up to 50 attendees", "Basic support", "1 event organizer", "Standard analytics"],
                 },
                 {
-                  name: "Professional",
-                  price: "$99",
-                  description: "For growing businesses",
-                  features: ["Up to 500 attendees", "Advanced analytics", "Priority support", "5 team members", "Custom branding"],
+                  name: "Pro",
+                  price: "$49",
+                  description: "For larger events and enhanced features",
+                  features: [
+                    "Up to 500 attendees",
+                    "Priority support",
+                    "5 event organizers",
+                    "Advanced analytics",
+                    "Custom branding",
+                  ],
                   popular: true,
                 },
                 {
-                  name: "Enterprise",
+                  name: "Premium",
                   price: "Custom",
-                  description: "For large organizations",
-                  features: ["Unlimited attendees", "Custom analytics", "24/7 support", "Unlimited team members", "API access", "Custom integration"],
+                  description: "For enterprises with extensive needs",
+                  features: [
+                    "Unlimited attendees",
+                    "24/7 dedicated support",
+                    "Unlimited event organizers",
+                    "Custom analytics",
+                    "API access",
+                    "Personalized onboarding",
+                  ],
                 },
               ].map((plan, index) => (
                 <Card
@@ -368,7 +377,9 @@ export default function Component() {
                     <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{plan.name}</h3>
                     <div className="mb-4">
                       <span className="text-4xl font-bold text-gray-900 dark:text-white">{plan.price}</span>
-                      {plan.price !== "Custom" && <span className="text-gray-600 dark:text-gray-400">/month</span>}
+                      {plan.price !== "Free" && plan.price !== "Custom" && (
+                        <span className="text-gray-600 dark:text-gray-400">/month</span>
+                      )}
                     </div>
                     <p className="text-gray-600 dark:text-gray-400 mb-6">{plan.description}</p>
                     <ul className="space-y-3 mb-6">
@@ -386,7 +397,7 @@ export default function Component() {
                           : 'bg-gray-900 dark:bg-gray-700 hover:bg-gray-800 dark:hover:bg-gray-600'
                       }`}
                     >
-                      Get Started
+                      {plan.price === "Free" ? "Get Started for Free" : "Get Started"}
                     </Button>
                   </CardContent>
                 </Card>
@@ -394,6 +405,7 @@ export default function Component() {
             </div>
           </div>
         </section>
+
 
         <section id="gallery" className="py-20 bg-white dark:bg-gray-950">
           <div className="container mx-auto px-4">
