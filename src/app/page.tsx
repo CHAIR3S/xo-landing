@@ -60,7 +60,7 @@ export default function Component() {
     // 'https://res.cloudinary.com/zeit-inc/image/upload/c_scale,w_720/nextconf-photos/Sexton_Vercel_1280.jpg',
     // 'https://res.cloudinary.com/zeit-inc/image/upload/c_scale,w_720/nextconf-photos/Sexton_Vercel_1278.jpg'
   ];
-
+  
   const testimonials = [
     {
       name: "Emma Johnson",
@@ -94,14 +94,14 @@ export default function Component() {
     }
   ];
   
-
+  
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300">
       <header
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
           scrolled
-            ? 'bg-white/5 dark:bg-gray-950/5 backdrop-blur-sm border-b border-white/10 dark:border-gray-800/10'
-            : 'bg-transparent'
+          ? 'bg-white/5 dark:bg-gray-950/5 backdrop-blur-sm border-b border-white/10 dark:border-gray-800/10'
+          : 'bg-transparent'
         }`}
       >
         <div className="container mx-auto">
@@ -110,16 +110,16 @@ export default function Component() {
               className="text-2xl font-semibold text-gray-900 dark:text-white hover:opacity-90 transition-opacity flex items-center"
               href="#"
             >
-              <Star className="mr-2 h-6 w-6 text-[#4D4DFF]" />
-              EventPro
+              <Image src='/assets/logo-xo.png' alt='Logo XO' width={100} height={100}/>
+              XO <span className='text-pink-400'>.</span>
             </Link>
 
             <nav className="hidden md:flex items-center space-x-8">
               {['Features', 'Gallery', 'Pricing', 'Contact'].map((item) => (
                 <Link
-                  key={item}
-                  className="text-sm text-gray-600 dark:text-gray-300 hover:text-[#4D4DFF] dark:hover:text-[#4D4DFF] transition-colors"
-                  href={`#${item.toLowerCase()}`}
+                key={item}
+                className="text-sm text-gray-600 dark:text-gray-300 hover:text-[#4D4DFF] dark:hover:text-[#4D4DFF] transition-colors"
+                href={`#${item.toLowerCase()}`}
                 >
                   {item}
                 </Link>
@@ -162,7 +162,7 @@ export default function Component() {
           <nav className="flex flex-col items-center justify-center h-full space-y-8">
             {['Features', 'Gallery', 'Pricing', 'Contact'].map((item) => (
               <Link
-                key={item}
+              key={item}
                 className="text-2xl text-gray-900 dark:text-gray-100 hover:text-[#4D4DFF] transition-colors"
                 href={`#${item.toLowerCase()}`}
                 onClick={() => setMobileMenuOpen(false)}
@@ -189,7 +189,7 @@ export default function Component() {
             <div className="absolute inset-0 bg-black/50" />
           </div>
           
-          <div className="container mx-auto px-4 z-10">
+          <div className="container mx-auto px-4 z-10 ">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="text-center lg:text-left">
                 <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
@@ -283,7 +283,7 @@ export default function Component() {
               What People Are Saying
             </h2>
             <p className="text-xl text-gray-400 text-center mb-12">
-              Don not just take our word for it. Here is what real people are saying about EventPro.
+              Don not just take our word for it. Here is what real people are saying about XO.
             </p>
             <div className="relative">
               <div 
@@ -469,7 +469,7 @@ export default function Component() {
             <div>
               <Link href="#" className="flex items-center text-2xl font-semibold text-gray-900 dark:text-white">
                 <Star className="mr-2 h-6 w-6 text-[#4D4DFF]" />
-                EventPro
+                XO
               </Link>
               <p className="mt-2 text-gray-600 dark:text-gray-400">
                 Making event management simple and efficient.
@@ -513,7 +513,7 @@ export default function Component() {
             </div>
           </div>
           <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 text-center text-gray-600 dark:text-gray-400">
-            <p>&copy; 2024 EventPro. All rights reserved.</p>
+            <p>&copy; 2024 XO. All rights reserved.</p>
           </div>
         </div>
       </footer>
